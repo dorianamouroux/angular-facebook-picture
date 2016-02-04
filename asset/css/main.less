@@ -1,0 +1,93 @@
+@blue: #2196F3;
+body {
+    background-color: #eee;
+    margin: 0;
+}
+
+.middle-loading {
+    position: fixed;
+    z-index: 100;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    margin-left: -32px;
+    margin-top: -32px;
+
+    .white-spinner {
+        border-color: white !important;
+    }
+}
+
+.index {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: @blue;
+    .centered {
+        position: fixed;
+        height: 200px;
+        width: 100%;
+        top: 50%;
+        margin-top: -100px;
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 45px;
+        }
+        .login-button {
+            text-align: center;
+        }
+    }
+}
+.brand-logo {
+    margin-left: 10px;
+}
+.content {
+    width: 100%;
+    padding: 0 10%;
+}
+.text-shadow {
+    text-shadow: 0 0 6px black;
+}
+.thumbnails {
+    height: 150px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    img {
+        max-width: 100%;
+        margin: auto;
+        display: block;
+        max-height: 100%;
+    }
+}
+.modal {
+    width: 80%;
+    .container-img {
+        width: 75%;
+        display: inline-block;
+        img {
+            max-width: 100%;
+            margin: auto;
+            display: block;
+            max-height: 100%;
+        }
+    }
+    .container-comments {
+        width: 23%;
+        padding-left: 20px;
+        min-height: 200px;
+        float: right;
+        border-left: 1px solid #ddd;
+        .likes {
+            margin-top: 20px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+        }
+    }
+}

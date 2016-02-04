@@ -1,0 +1,27 @@
+<div class="index">
+    <div ng-if="loading">
+
+  <div class="preloader-wrapper big active middle-loading">
+    <div class="spinner-layer spinner-red-only white-spinner">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+
+    </div>
+    <div>
+        <div ng-if="!loading" class="centered">
+            <h1>Log with Facebook for the awesome</h1>
+            <div class="login-button">
+                <button class="waves-effect waves-light btn white blue-text" ng-click="login()">
+                    Click to log
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

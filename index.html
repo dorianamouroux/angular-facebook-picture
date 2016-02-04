@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Facebook images</title>
+
+  <link rel="stylesheet" type="text/css" href="asset/css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="bower_components/Materialize/dist/css/materialize.css" />
+  <link rel="stylesheet" type="text/css" href="asset/css/main.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="bower_components/Materialize/dist/js/materialize.js"></script>
+  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+  <script type="text/javascript" src="bower_components/ng-facebook/ngFacebook.js"></script>
+
+  <script type="text/javascript" src="src/app.js"></script>
+  <script type="text/javascript" src="src/routes.js"></script>
+
+  <script type="text/javascript" src="src/modules/services/toast.service.js"></script>
+  <script type="text/javascript" src="src/modules/services/user.service.js"></script>
+  <script type="text/javascript" src="src/modules/services/photo.service.js"></script>
+  <script type="text/javascript" src="src/modules/services/album.service.js"></script>
+  <script type="text/javascript" src="src/modules/filter/facebook-img.filter.js"></script>
+  <script type="text/javascript" src="src/modules/navigation/navigation.directive.js"></script>
+
+  <script type="text/javascript" src="src/page/index/index.controller.js"></script>
+  <script type="text/javascript" src="src/page/home/home.controller.js"></script>
+  <script type="text/javascript" src="src/page/album/album.controller.js"></script>
+</head>
+
+<body>
+
+  <div ng-app="facebook-img">
+      <div ng-view=""></div>
+  </div>
+
+</body>
+
+</html>

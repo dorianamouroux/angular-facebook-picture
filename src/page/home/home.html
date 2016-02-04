@@ -1,0 +1,46 @@
+<top-navigation></top-navigation>
+<div class="content">
+    <div ng-if="loading.album">
+        <div class="preloader-wrapper big active middle-loading">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="!loading.album">
+        <h3>My albums</h3>
+        <div class="row">
+            <div class="col l4 m6 s12" ng-repeat="album in albums">
+                <a href="#/album/{{album.id}}">
+                    <div class="card small">
+                        <div class="card-image">
+                            <div ng-if="album.images">
+                                <img ng-src="{{album.images[0].source}}"/>
+                            </div>
+                            <div ng-if="!album.images">
+                                <img src="asset/img/thumbnail-default.jpg"/>
+                            </div>
+                            <span class="card-title text-shadow">{{album.name}}</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="blue-grey-text">
+                                {{album.description ? album.description : "No description available"}}
+                            </p>
+                        </div>
+                        <div class="card-action">
+                            <p>Click to see pictures</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

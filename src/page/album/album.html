@@ -1,0 +1,77 @@
+<top-navigation></top-navigation>
+<div ng-if="loading.album">
+    <div class="preloader-wrapper big active middle-loading">
+        <div class="spinner-layer spinner-red-only white-spinner">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+                <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Actual Page -->
+<div ng-if="!loading.album" class="content">
+    <h3>
+        <a href="#/home">
+            <i class="material-icons">replay</i>
+        </a>
+        {{album.name}}</h3>
+    <div class="row">
+        <div class="col l2 m4 s6" ng-repeat="photo in photos">
+            <div class="thumbnails">
+                <img ng-click="openPhoto(photo)" class="z-depth-2 hoverable" ng-src="{{photo.images[0].source}}">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal box -->
+<div id="modalPhoto" class="modal">
+    <div class="modal-content">
+        <div class="container-img">
+            <img ng-src="{{focused.images[0].source}}"/>
+        </div>
+        <div class="container-comments">
+            <div class="row valign-wrapper">
+                <div class="col s4">
+                    <img ng-src="{{user.id | facebookUrl }}" alt="" class="circle responsive-img">
+                </div>
+                <div class="col s8">
+                    <span class="black-text">
+                        {{user.name}}
+                    </span>
+                </div>
+            </div>
+            <p class="blue-grey-text text-lighten-3">
+                {{ focused.created_time | date : date:'dd-MM-yyyy HH:mm Z' }}
+            </p>
+            <p>
+                {{focused.name ? focused.name : "No description available"}}
+            </p>
+            <div ng-if="!loading.photoLikes" class="likes">
+                {{focused.likes}}
+                likes
+            </div>
+            <div ng-if="!loading.photoComments">
+                <div ng-if="focused.comments.length">
+                    <ul class="collection">
+                        <li class="collection-item avatar" ng-repeat="comment in focused.comments">
+                            <img ng-src="{{comment.from.id | facebookUrl }}" alt="" class="circle">
+                            <span class="title">{{comment.from.name}}</span>
+                            <p>{{comment.message}}</p>
+                        </li>
+                    </ul>
+                </div>
+                <p ng-if="!focused.comments.length">
+                    No comments
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
